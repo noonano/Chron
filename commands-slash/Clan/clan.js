@@ -255,8 +255,8 @@ async function checkMember(member) {
  */
 async function registerClan(interaction, member, clanName, clanType) {
 
-    sql.connect(sqlConfig)
-    sql.query`INSERT INTO 
+    await sql.connect(sqlConfig)
+    await sql.query`INSERT INTO 
     GuildClan(
         guildID,
         clanName,
@@ -278,12 +278,12 @@ async function registerClan(interaction, member, clanName, clanType) {
 
 
 
-    sql.connect(sqlConfig).then(() => {
-        return sql.query`SELECT * FROM GuildClan WHERE clanLeaderID = ${member.id}`
+    await sql.connect(sqlConfig).then(() => {
+        return await sql.query`SELECT * FROM GuildClan WHERE clanLeaderID = ${member.id} AND guildID = ${member.guild.id}`
     }).then(async result => {
 
-        sql.connect(sqlConfig)
-        sql.query`INSERT INTO ClanMember(
+        await sql.connect(sqlConfig)
+        await sql.query`INSERT INTO ClanMember(
             guildID,
             clanID,
             userID,
@@ -691,7 +691,7 @@ async function getMember(client, guildID, userID) {
  * @param {String} clanID 
  * @returns {Number}
  */
-async function getAllMembers(client, clanID,guildID) {
+async function getAllMembers(client, clanID, guildID) {
     await sql.connect(sqlConfig)
     const result = await sql.query`SELECT * FROM ClanMember WHERE clanID = ${clanID} AND guildID = ${guildID}`
 
