@@ -393,7 +393,7 @@ async function displayClan(interaction, member, data, contribution) {
                 \`\`\`${data.clanDescription}\`\`\`\n
                 __Info:__\nChief: ${await getMember(interaction.client, interaction.guildId, data.clanLeaderID)}
                 Members: ${await getAllMembers(interaction.client, data.clanID)} / ${100} | Type: ${data.clanType}
-                Lv: ${await getLevel(1, await getTotalExp(contribution, 0), interaction.client, interaction.guildId, 0)}
+                Lv: ${await getLevel(0, await getTotalExp(contribution, 0), interaction.client, interaction.guildId, 0)}
                 Wins: ${data.clanWins}
                 
                 __Clan Perks:__
@@ -455,7 +455,7 @@ async function updateEmbeds(msg, member, collector, interaction, data, result, d
                             \`\`\`${data.clanDescription}\`\`\`\n
                             __Info:__\nChief: ${await getMember(interaction.client, interaction.guildId, data.clanLeaderID)}
                             Members: ${await getAllMembers(interaction.client, data.clanID)} / ${100} | Type: ${data.clanType}
-                            Lv: ${await getLevel(1, await getTotalExp(contribution, 0), interaction.client, interaction.guildId, 0)}
+                            Lv: ${await getLevel(0, await getTotalExp(contribution, 0), interaction.client, interaction.guildId, 0)}
                             Wins: ${data.clanWins}
             
                             __Clan Perks:__
