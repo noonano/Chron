@@ -21,7 +21,7 @@ module.exports = {
     name: "clan",
     category: "Configuration",
     description: "Change Prefix",
-    perms: ['ADMINISTRATOR', 'MANAGE_GUILD'],
+    perms: [],
     guildOnly: true,
     run:
         /**
