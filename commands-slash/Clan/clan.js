@@ -272,7 +272,7 @@ async function registerClan(interaction, member, clanName, clanType) {
         ${clanName},
         ${member.id},
         ${1},
-        ${''},
+        ${' '},
         ${clanType},
         ${0}
         )`
@@ -388,7 +388,8 @@ async function displayClan(interaction, member, data, contribution) {
         embeds: [
             new MessageEmbed()
                 .setColor('#4dda3b')
-                .setDescription(`${data.clanName} (${data.clanID})
+                .setTitle(data.clanName)
+                .setDescription(`(${data.clanID})
                 \`\`\`${data.clanDescription}\`\`\`\n
                 __Info:__\nChief: ${await getMember(interaction.client, interaction.guildId, data.clanLeaderID)}
                 Members: ${await getAllMembers(interaction.client, data.clanID)} / ${100} | Type: ${data.clanType}
@@ -449,6 +450,7 @@ async function updateEmbeds(msg, member, collector, interaction, data, result, d
                     embeds: [
                         new MessageEmbed()
                             .setColor('#4dda3b')
+                            .setTitle(data.clanName)
                             .setDescription(`${data.clanName} (${data.clanID})
                             \`\`\`${data.clanDescription}\`\`\`\n
                             __Info:__\nChief: ${await getMember(interaction.client, interaction.guildId, data.clanLeaderID)}
