@@ -81,7 +81,7 @@ module.exports = {
                             ]
                         })
 
-                    joinClan(interaction, interaction.options.getString('id/name'), null)
+                    joinClan(interaction, interaction.member, interaction.options.getString('id'), null)
 
                 }
                 if (interaction.options.getSubcommand() == 'leave') {
@@ -103,7 +103,7 @@ module.exports = {
                                     .setDescription('You are the current Leader. You need to pass the Leadership before you can leave')
                             ]
                         })
-                    
+
                     await sql.connect(sqlConfig)
                     await sql.query`DELETE FROM ClanMember WHERE userID = ${interaction.member.id} AND guildID = ${interaction.guildId}`
                     await sql.query`UPDATE UserProfile SET clanID = NULL WHERE userID = ${interaction.member.id} AND guildID = ${interaction.guildId}`
@@ -156,7 +156,7 @@ async function checkUser(member) {
  * @param {String} clan 
  * @param {sql.IResult} result
  */
-async function joinClan(interaction, clan, result) {
+async function joinClan(interaction, member, clan, result) {
     await sql.connect(sqlConfig)
     result = await sql.query`SELECT * FROM GuildClan WHERE clanName = ${clan} AND guildID = ${interaction.guildId}`
 
@@ -164,7 +164,7 @@ async function joinClan(interaction, clan, result) {
 
         sql.query`INSERT INTO ClanMember(
             guildID,
-            clanID
+            clanID,
             userID,
             role,
             contribution
@@ -192,7 +192,6 @@ async function joinClan(interaction, clan, result) {
 
         await sql.connect(sqlConfig)
         result = await sql.query`SELECT * FROM GuildClan WHERE clanID = ${clan} AND guildID = ${interaction.guildId}`
-
         if (!result.recordset[0])
             return interaction.editReply({
                 embeds: [
@@ -205,7 +204,7 @@ async function joinClan(interaction, clan, result) {
 
         sql.query`INSERT INTO ClanMember(
             guildID,
-            clanID
+            clanID,
             userID,
             role,
             contribution
@@ -685,6 +684,7 @@ async function updateEmbeds(msg, member, collector, interaction, data, result, d
  * @returns {GuildMember}
  */
 async function getMember(client, guildID, userID) {
+    await client.guilds.cache.get(guildID).members.fetch(userID)
     return client.guilds.cache.get(guildID).members.cache.get(userID)
 }
 
