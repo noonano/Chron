@@ -278,7 +278,7 @@ async function registerClan(interaction, member, clanName, clanType) {
 
 
 
-    await sql.connect(sqlConfig).then(() => {
+    await sql.connect(sqlConfig).then(async () => {
         return await sql.query`SELECT * FROM GuildClan WHERE clanLeaderID = ${member.id} AND guildID = ${member.guild.id}`
     }).then(async result => {
 
