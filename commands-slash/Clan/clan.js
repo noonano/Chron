@@ -30,7 +30,7 @@ module.exports = {
          * @returns 
          */
         async (interaction) => {
-            interaction.deferReply({ ephemeral: true }).then(async () => {
+            interaction.deferReply({ ephemeral: false }).then(async () => {
                 await checkUser(interaction.member)
 
                 if (interaction.options.getSubcommand() == 'display') {
