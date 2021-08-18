@@ -282,8 +282,8 @@ async function registerClan(interaction, member, clanName, clanType) {
         return sql.query`SELECT * FROM GuildClan WHERE clanLeaderID = ${member.id}`
     }).then(async result => {
 
-        sql.connect(sqlConfig).then(() => {
-            sql.query`INSERT INTO ClanMember(
+        sql.connect(sqlConfig)
+        sql.query`INSERT INTO ClanMember(
             guildID,
             clanID,
             userID,
@@ -296,13 +296,10 @@ async function registerClan(interaction, member, clanName, clanType) {
             ${member.id}, ${'LEADER'},
             ${0}
             )`
-            sql.query`UPDATE UserProfile
+        sql.query`UPDATE UserProfile
             SET clanID = ${result.recordset[0].clanID} 
             WHERE userID = ${member.id} AND guildID = ${member.guild.id}`
-            interaction.editReply({ content: 'Succcessfully created a clan!' })
-        }).catch(err => {
-            console.log(err)
-        })
+        interaction.editReply({ content: 'Succcessfully created a clan!' })
 
     })
 }
@@ -391,7 +388,7 @@ async function displayClan(interaction, member, data, contribution) {
                 .setDescription(`(${data.clanID})
                 \`\`\`${data.clanDescription}\`\`\`\n
                 __Info:__\nChief: ${await getMember(interaction.client, interaction.guildId, data.clanLeaderID)}
-                Members: ${await getAllMembers(interaction.client, data.clanID)} / ${100} | Type: ${data.clanType}
+                Members: ${await getAllMembers(interaction.client, data.clanID, interaction.guildId)} / ${100} | Type: ${data.clanType}
                 Lv: ${await getLevel(0, await getTotalExp(contribution, 0), interaction.client, interaction.guildId, 0)}
                 Wins: ${data.clanWins}
                 
@@ -453,7 +450,7 @@ async function updateEmbeds(msg, member, collector, interaction, data, result, d
                             .setDescription(`${data.clanName} (${data.clanID})
                             \`\`\`${data.clanDescription}\`\`\`\n
                             __Info:__\nChief: ${await getMember(interaction.client, interaction.guildId, data.clanLeaderID)}
-                            Members: ${await getAllMembers(interaction.client, data.clanID)} / ${100} | Type: ${data.clanType}
+                            Members: ${await getAllMembers(interaction.client, data.clanID, interaction.guildId)} / ${100} | Type: ${data.clanType}
                             Lv: ${await getLevel(0, await getTotalExp(contribution, 0), interaction.client, interaction.guildId, 0)}
                             Wins: ${data.clanWins}
             
@@ -694,9 +691,9 @@ async function getMember(client, guildID, userID) {
  * @param {String} clanID 
  * @returns {Number}
  */
-async function getAllMembers(client, clanID) {
+async function getAllMembers(client, clanID,guildID) {
     await sql.connect(sqlConfig)
-    const result = await sql.query`SELECT * FROM ClanMember WHERE clanID = ${clanID}`
+    const result = await sql.query`SELECT * FROM ClanMember WHERE clanID = ${clanID} AND guildID = ${guildID}`
 
     return result.recordset.length
 }
