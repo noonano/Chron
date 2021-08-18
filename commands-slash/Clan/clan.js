@@ -191,7 +191,7 @@ async function joinClan(interaction, clan, result) {
     } else {
 
         await sql.connect(sqlConfig)
-        result = await sql.query`SELECT * FROM GuildClan WHERE clanID = ${parseInt(clan)} AND guildID = ${interaction.guildId}`
+        result = await sql.query`SELECT * FROM GuildClan WHERE clanID = ${clan} AND guildID = ${interaction.guildId}`
 
         if (!result.recordset[0])
             return interaction.editReply({

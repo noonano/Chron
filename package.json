@@ -1,6 +1,6 @@
 {
   "name": "chron",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Leveling Clan based Discord Bot",
   "main": "index.js",
   "scripts": {
