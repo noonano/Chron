@@ -121,6 +121,19 @@ module.exports = async (client) => {
                         ${100}
                         )`
                 }
+
+                await client.guildSettings
+                            .set(
+                                value.guildID, {
+                                guildPrefix: null,
+                                guildMessageXp: 3,
+                                guildVoiceXp: 3,
+                                guildMessageCooldown: 5,
+                                guildVoiceCooldown: 5,
+                                equation: 1,
+                                base: 20,
+                                modifier: 100
+                            })
             }).catch(err => {
                 console.log(err)
             })
