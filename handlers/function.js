@@ -118,8 +118,7 @@ module.exports = async (client) => {
                         ${5},
                         ${1},
                         ${20},
-                        ${100},
-                        ${0}
+                        ${100}
                         )`
                 }
             }).catch(err => {
