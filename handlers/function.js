@@ -108,8 +108,7 @@ module.exports = async (client) => {
                         guildVoiceCooldown,
                         equation,
                         base,
-                        modifier,
-                        clanWins
+                        modifier
                         ) 
                     VALUES(
                         ${guild.id},
