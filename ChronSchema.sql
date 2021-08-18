@@ -1,5 +1,4 @@
--- CREATE TABLE Guild
--- (
+-- CREATE TABLE Guild(
 --     guildID VARCHAR(50) PRIMARY KEY,
 --     guildPrefix VARCHAR(10),
 --     guildMessageXP INT,
@@ -10,10 +9,6 @@
 --     base INT,
 --     modifier INT
 -- );
-    ALTER TABLE Guild ADD equation INT;
-    ALTER TABLE Guild ADD base INT;
-    ALTER TABLE Guild ADD modifier INT;
-
 
 -- CREATE TABLE GuildIgnoreChannel
 -- (
@@ -28,11 +23,12 @@
 --     clanID INT IDENTITY(100000, 1) PRIMARY KEY,
 --     clanName VARCHAR(255),
 --     clanLeaderID VARCHAR(50),
---     clanDescription VARCHAR(500)
+--     clanDescription VARCHAR(500),
 --     clanLevel INT,
+--     clanType VARCHAR(50),
+--     clanWins INT
 --     FOREIGN KEY (guildID) REFERENCES Guild(guildID)
 -- );
-    ALTER TABLE GuildClan ADD clanWins INT;
 
 -- CREATE TABLE UserProfile
 -- (
@@ -46,13 +42,15 @@
 
 -- CREATE TABLE ClanMember
 -- (
---     guildID VARCHAR(50)
+--     guildID VARCHAR(50),
 --     clanID INT,
 --     userID VARCHAR(50),
 --     role VARCHAR(50),
 --     contribution INT,
 --     FOREIGN KEY (clanID) REFERENCES GuildClan(clanID)
 -- );
+
+
  ALTER TABLE ClanMember ADD guildID VARCHAR(50);
 -- UPDATE table_name
 -- SET column1 = value1, column2 = value2, ...

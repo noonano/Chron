@@ -25,7 +25,7 @@ client.categories = new Collection();
 
 
 
-["command", "command-slash", "event", "function"].forEach(handler => {
+["command-slash", "event", "function"].forEach(handler => {
     require(`./handlers/${handler}`)(client);
 });
 
