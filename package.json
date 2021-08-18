@@ -1,0 +1,30 @@
+{
+  "name": "chron",
+  "version": "1.0.0",
+  "description": "Leveling Clan based Discord Bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "pm2 start.js indes.js --name Chron",
+    "deploy": "node setSlashCommand.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/noonano/Chron.git"
+  },
+  "author": "nonano?",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/noonano/Chron/issues"
+  },
+  "homepage": "https://github.com/noonano/Chron#readme",
+  "dependencies": {
+    "@discordjs/rest": "^0.1.0-canary.0",
+    "ascii-table": "^0.0.9",
+    "colors": "^1.4.0",
+    "discord-api-types": "^0.22.0",
+    "discord.js": "^13.1.0",
+    "dotenv": "^10.0.0",
+    "mssql": "^7.2.0"
+  }
+}
