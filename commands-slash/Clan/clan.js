@@ -286,7 +286,7 @@ async function registerClan(interaction, member, clanName, clanType) {
         sql.connect(sqlConfig).then(() => {
             sql.query`INSERT INTO ClanMember(
             guildID,
-            clanID
+            clanID,
             userID,
             role,
             contribution
