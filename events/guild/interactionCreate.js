@@ -12,7 +12,8 @@ module.exports = {
         if (interaction.isCommand()) {
             if (!interaction.client.commands_slash.has(interaction.commandName)) return;
 
-            if (!interaction.member.roles.cache.some(role => role.name === 'Bot Tester')) return
+            if (!interaction.member.roles.cache.some(role => role.name === 'Bot Tester'))
+                return interaction.reply({ content: 'You need **Bot Tester** Role to use this Bot' })
 
             const command = interaction.client.commands_slash.get(interaction.commandName)
 
