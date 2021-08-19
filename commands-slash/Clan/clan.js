@@ -463,11 +463,11 @@ async function updateEmbeds(msg, member, collector, interaction, data, result, d
                             .addComponents(
                                 new MessageButton()
                                     .setCustomId('clan')
-                                    .setEmoji('877033223895543838')
+                                    .setEmoji('877843013773176842')
                                     .setStyle('PRIMARY'),
                                 new MessageButton()
                                     .setCustomId('member')
-                                    .setEmoji('877032160920490025')
+                                    .setEmoji('877843135013748736')
                                     .setStyle('PRIMARY')
                             )
                     ]
@@ -480,11 +480,11 @@ async function updateEmbeds(msg, member, collector, interaction, data, result, d
                         .addComponents(
                             new MessageButton()
                                 .setCustomId('clan')
-                                .setEmoji('877033223895543838')
+                                .setEmoji('877843013773176842')
                                 .setStyle('PRIMARY'),
                             new MessageButton()
                                 .setCustomId('member')
-                                .setEmoji('877032160920490025')
+                                .setEmoji('877843135013748736')
                                 .setStyle('PRIMARY'),
                             new MessageButton()
                                 .setCustomId('prev')
@@ -537,11 +537,11 @@ async function updateEmbeds(msg, member, collector, interaction, data, result, d
                         .addComponents(
                             new MessageButton()
                                 .setCustomId('clan')
-                                .setEmoji('877033223895543838')
+                                .setEmoji('877843013773176842')
                                 .setStyle('PRIMARY'),
                             new MessageButton()
                                 .setCustomId('member')
-                                .setEmoji('877032160920490025')
+                                .setEmoji('877843135013748736')
                                 .setStyle('PRIMARY'),
                             new MessageButton()
                                 .setCustomId('prev')
@@ -594,11 +594,11 @@ async function updateEmbeds(msg, member, collector, interaction, data, result, d
                         .addComponents(
                             new MessageButton()
                                 .setCustomId('clan')
-                                .setEmoji('877033223895543838')
+                                .setEmoji('877843013773176842')
                                 .setStyle('PRIMARY'),
                             new MessageButton()
                                 .setCustomId('member')
-                                .setEmoji('877032160920490025')
+                                .setEmoji('877843135013748736')
                                 .setStyle('PRIMARY'),
                             new MessageButton()
                                 .setCustomId('prev')
@@ -659,12 +659,12 @@ async function updateEmbeds(msg, member, collector, interaction, data, result, d
                         .addComponents(
                             new MessageButton()
                                 .setCustomId('clan')
-                                .setEmoji('877033223895543838')
+                                .setEmoji('877843013773176842')
                                 .setStyle('SECONDARY')
                                 .setDisabled(true),
                             new MessageButton()
                                 .setCustomId('member')
-                                .setEmoji('877032160920490025')
+                                .setEmoji('877843135013748736')
                                 .setStyle('SECONDARY')
                                 .setDisabled(true)
                         )
