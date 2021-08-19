@@ -4,3 +4,4 @@ sqlSample.js
 setSlashCommand.js
 ChronSchema.sql
 .env
+ping.js

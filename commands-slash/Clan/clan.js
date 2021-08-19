@@ -401,12 +401,12 @@ async function displayClan(interaction, member, data, contribution) {
                 .addComponents(
                     new MessageButton()
                         .setCustomId('clan')
-                        .setEmoji('877033223895543838')
-                        .setStyle('SECONDARY'),
+                        .setEmoji('877843013773176842')
+                        .setStyle('PRIMARY'),
                     new MessageButton()
                         .setCustomId('member')
-                        .setEmoji('877032160920490025')
-                        .setStyle('SECONDARY')
+                        .setEmoji('877843135013748736')
+                        .setStyle('PRIMARY')
                 )
         ]
     }).then(
@@ -464,11 +464,11 @@ async function updateEmbeds(msg, member, collector, interaction, data, result, d
                                 new MessageButton()
                                     .setCustomId('clan')
                                     .setEmoji('877033223895543838')
-                                    .setStyle('SECONDARY'),
+                                    .setStyle('PRIMARY'),
                                 new MessageButton()
                                     .setCustomId('member')
                                     .setEmoji('877032160920490025')
-                                    .setStyle('SECONDARY')
+                                    .setStyle('PRIMARY')
                             )
                     ]
                 })
@@ -481,20 +481,20 @@ async function updateEmbeds(msg, member, collector, interaction, data, result, d
                             new MessageButton()
                                 .setCustomId('clan')
                                 .setEmoji('877033223895543838')
-                                .setStyle('SECONDARY'),
+                                .setStyle('PRIMARY'),
                             new MessageButton()
                                 .setCustomId('member')
                                 .setEmoji('877032160920490025')
-                                .setStyle('SECONDARY'),
+                                .setStyle('PRIMARY'),
                             new MessageButton()
                                 .setCustomId('prev')
                                 .setEmoji('⬅')
-                                .setStyle('SECONDARY')
+                                .setStyle('PRIMARY')
                                 .setDisabled(false),
                             new MessageButton()
                                 .setCustomId('next')
                                 .setEmoji('➡')
-                                .setStyle('SECONDARY')
+                                .setStyle('PRIMARY')
                                 .setDisabled(false)
                         )
                 ]
@@ -538,20 +538,20 @@ async function updateEmbeds(msg, member, collector, interaction, data, result, d
                             new MessageButton()
                                 .setCustomId('clan')
                                 .setEmoji('877033223895543838')
-                                .setStyle('SECONDARY'),
+                                .setStyle('PRIMARY'),
                             new MessageButton()
                                 .setCustomId('member')
                                 .setEmoji('877032160920490025')
-                                .setStyle('SECONDARY'),
+                                .setStyle('PRIMARY'),
                             new MessageButton()
                                 .setCustomId('prev')
                                 .setEmoji('⬅')
-                                .setStyle('SECONDARY')
+                                .setStyle('PRIMARY')
                                 .setDisabled(false),
                             new MessageButton()
                                 .setCustomId('next')
                                 .setEmoji('➡')
-                                .setStyle('SECONDARY')
+                                .setStyle('PRIMARY')
                                 .setDisabled(false)
                         )
                 ]
@@ -595,20 +595,20 @@ async function updateEmbeds(msg, member, collector, interaction, data, result, d
                             new MessageButton()
                                 .setCustomId('clan')
                                 .setEmoji('877033223895543838')
-                                .setStyle('SECONDARY'),
+                                .setStyle('PRIMARY'),
                             new MessageButton()
                                 .setCustomId('member')
                                 .setEmoji('877032160920490025')
-                                .setStyle('SECONDARY'),
+                                .setStyle('PRIMARY'),
                             new MessageButton()
                                 .setCustomId('prev')
                                 .setEmoji('⬅')
-                                .setStyle('SECONDARY')
+                                .setStyle('PRIMARY')
                                 .setDisabled(false),
                             new MessageButton()
                                 .setCustomId('next')
                                 .setEmoji('➡')
-                                .setStyle('SECONDARY')
+                                .setStyle('PRIMARY')
                                 .setDisabled(false)
                         )
                 ]
